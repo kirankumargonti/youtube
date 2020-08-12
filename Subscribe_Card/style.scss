@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+$main_bg: #28053f;
+$border_color: #b4b4ba;
+$box_shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
+@mixin displayCenter {
+    display: grid;
+    place-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Lato', sans-serif;
+    background-color: $main_bg;
+    @include displayCenter();
+
+}
+
+.subscribe_container {
+    @include displayCenter();
+    background-color: #ffffff;
+    padding: 3rem 5rem;
+    border-radius: 10px;
+
+    h2 {
+        margin: 20px 0;
+    }
+
+    p {
+        font-weight: 300;
+    }
+
+    form {
+        margin: 20px 0;
+
+        input[type='email'] {
+            width: 300px;
+            height: 50px;
+            padding: 1em 2rem;
+            border: 2px solid $border_color;
+            border-radius: 5px;
+            margin: 20px 20px 30px 0;
+
+            &::placeholder {
+                font-size: 1rem;
+                opacity: 0.7;
+                font-family: 'Lato', sans-serif;
+            }
+        }
+
+        button {
+            display: inline-block;
+            padding: 1em 3em;
+            background-color: $main_bg;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1rem;
+            box-shadow: $box_shadow;
+
+            &:hover {
+                cursor: pointer;
+                background-color: #000000;
+            }
+        }
+
+        input[type='checkbox']{
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+        }
+    }
+}

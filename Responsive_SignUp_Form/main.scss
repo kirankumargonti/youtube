@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+// Sass variables
+$primary_background: #ffffff;
+$secondary_color: #202842;
+$button_background:#2b140b;
+
+$main_background: linear-gradient(105deg, $button_background 45%, $primary_background 45%, $primary_background 100%);
+
+$mobile_background:linear-gradient(0deg, #c7082b 45%, #c7082b 45%, #6300BE 100%);
+
+$input_border_color: #DCDFF1;
+$placeholder_color: #5D698D;
+
+$box_shadow_one: 0px 8px 15px rgba(0, 0, 0, 0.1);
+$box_shadow_two: 0px 10px 20px rgba(43, 20, 11, 0.315);
+
+@mixin displayCenter {
+    display: grid;
+    place-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    @include displayCenter();
+    background: $main_background;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+.login_btn,
+.signup_btn,
+.google_login,
+.facebook_login,
+.linkedin_login {
+    padding: 0.8em 3.5em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: $box_shadow_one;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    letter-spacing: 1px;
+
+    &:hover {
+        box-shadow: $box_shadow_two;
+        transition: all .3s ease-in-out 0s;
+        transform: translateY(-2px);
+    }
+}
+
+.signup_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 10px;
+
+
+    .signup_left {
+        color: $primary_background;
+        margin: auto auto auto 0;
+        width: 30%;
+        text-align: center;
+
+        .login_btn {
+            border: 1px solid $primary_background;
+            color: $primary_background;
+            background-color: transparent;
+            margin: 15px 0;
+
+            &:hover {
+                background-color: $primary_background;
+                color: $button_background;
+            }
+        }
+    }
+
+    .signup_right {
+        @include displayCenter();
+        color: $secondary_color;
+
+        p {
+            text-align: center;
+        }
+
+        form {
+            label {
+                font-size: 14px;
+                font-weight: 600px;
+                text-transform: capitalize;
+            }
+
+            input {
+                padding: 15px 20px;
+                border-radius: 3px;
+                border: 2px solid $input_border_color;
+                width: 100%;
+                margin: 5px 0;
+
+                &::placeholder {
+                    font-size: 16px;
+                    color: $placeholder_color;
+                }
+            }
+
+            .name_inputs {
+                display: flex;
+            }
+
+            .fname {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            .lname {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border-left: none;
+            }
+
+            .password {
+                position: relative;
+
+                i {
+                    position: absolute;
+                    top: 50%;
+                    right: 20px;
+                    transform: translate(-50%, -50%);
+                    cursor: pointer;
+                }
+            }
+
+            .checkbox {
+                width: auto;
+                margin: 20px 10px 20px 0;
+            }
+
+            span {
+                font-size: 14px;
+
+                a {
+                    text-decoration: none;
+                }
+            }
+
+            .signup_btn {
+                width: 100%;
+                background-color: $button_background;
+                color: $primary_background;
+            }
+
+            .or_else {
+                font-size: 11px;
+            }
+        }
+
+        .social_logins {
+
+            .google_login,
+            .facebook_login,
+            .linkedin_login {
+                background-color: transparent;
+                border: 1px solid $button_background;
+
+                i {
+                    color: $button_background;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and(max-width: 780px) {
+    body {
+        background: $mobile_background;
+
+        .signup_container {
+            .signup_left {
+                width: 100%;
+            }
+
+            .signup_right {
+                color: $primary_background;
+            }
+        }
+    }
+}

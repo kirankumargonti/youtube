@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap');
+
+@mixin displayCenter {
+    display: grid;
+    place-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    @include displayCenter();
+    background-image: url('https://images.pexels.com/photos/211358/pexels-photo-211358.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #ffffff;
+    padding: 10px;
+
+    .halloween_container {
+        text-align: center;
+
+        h3 {
+            font-size: 30px;
+            text-transform: lowercase;
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
+
+        h1 {
+            font-size: 70px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .countdown_time {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2em;
+            margin-top: 8rem;
+
+            .days,
+            .hours,
+            .minutes,
+            .seconds {
+                width: 200px;
+                height: 200px;
+                padding: 10px;
+                background-color: #000000b0;
+                @include displayCenter();
+                border-radius: 10px;
+
+                h1,
+                h2 {
+                    font-weight: 100;
+                    font-size: 5rem;
+                }
+
+                h2 {
+                    font-size: 2rem;
+                    color: #ffffffb7;
+                }
+            }
+        }
+    }
+}

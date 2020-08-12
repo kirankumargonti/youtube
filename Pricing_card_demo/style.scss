@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+$main_bg: #AA2B33;
+$primary_bg: #24141C;
+$secondary_bg: #B2AAAB;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Lato', sans-serif;
+    background-color: $main_bg;
+    display: grid;
+    place-items: center;
+}
+
+.pricing_container {
+    background-color: $primary_bg;
+    color: $secondary_bg;
+    display: grid;
+    grid-gap: 5rem;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5rem 10rem;
+    border-radius: 10px;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: '';
+        height: 5%;
+        width: 100%;
+        background: #24141c38;
+        bottom: -60px;
+        border-radius: 50%;
+    }
+
+    .basic,
+    .pro {
+        line-height: 2;
+
+        h3 {
+            margin-top: 10px;
+        }
+
+        p {
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5em 4rem;
+            border: 1px solid $main_bg;
+            text-decoration: none;
+            color: $secondary_bg;
+            background: $main_bg;
+            border-radius: 3px;
+            margin-top: 30px;
+        }
+    }
+
+    .basic {
+        .btn_one {
+            background-color: transparent;
+            color: $main_bg;
+
+            &:hover {
+                background-color: $main_bg;
+                color: $secondary_bg;
+            }
+        }
+    }
+}

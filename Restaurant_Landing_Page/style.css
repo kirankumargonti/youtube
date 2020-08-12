@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: #ffffff !important;
+  letter-spacing: 1px;
+  font-family: 'Oswald', sans-serif;
+}
+
+body::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(75, 47, 4, 0.6);
+}
+
+.nav-link {
+  color: #ffffff !important;
+  padding: 5px 25px !important;
+}
+
+nav,
+.caption {
+  z-index: 2;
+}
+
+.caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.caption h1 {
+  font-size: 5rem;
+}
+
+.caption p {
+  font-size: 1.5rem;
+  padding: 20px 0;
+}
+
+.caption a {
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 0;
+  font-size: 1.5rem;
+  border: 1px solid #ffffff;
+  padding: 5px 20px;
+}
+
+.btn-1:hover {
+  color: #ffffff;
+  background: teal;
+}
+
+.btn-2 {
+  color: #ffffff;
+  background: teal;
+}
+
+.btn-2:hover {
+  color: #ffffff;
+  background: teal;
+}
+
+/* Media  Quires */
+@media (max-width: 576px) {
+  .caption h1 {
+    font-size: 2rem;
+  }
+
+  .caption p {
+    font-size: 1rem;
+  }
+
+  .caption a {
+    font-size: 1rem;
+    margin: 0 !important;
+    margin-bottom: 10px !important;
+  }
+}

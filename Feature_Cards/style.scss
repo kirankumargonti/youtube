@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+$main_bg: #f7f8fc;
+$primary_bg: #ffffff;
+$secondary_bg: #000000;
+$hover_bg: #005c80;
+
+$box_shadow_one: 0px 1px 10px rgba(0, 0, 0, 0.1);
+$box_shadow_two: 0px 1px 10px rgba(0, 0, 0, 0.3);
+
+$icon_bg_one: rgba(48, 107, 243, 0.15);
+$icon_bg_two: rgba(217, 88, 208, 0.15);
+$icon_bg_three: rgba(229, 93, 93, 0.15);
+$icon_bg_four: rgba(67, 167, 121, 0.15);
+
+$icon_one: #306bf3;
+$icon_two: #d958d0;
+$icon_three: #e55d5d;
+$icon_four: #43a779;
+
+$icon_one_border_radius: 46% 55% 43% 39%;
+$icon_two_border_radius: 39% 46% 55% 43%;
+$icon_three_border_radius: 43% 39% 46% 55%;
+$icon_four_border_radius: 55% 43% 39% 46%;
+
+@mixin displayCenter {
+  display: grid;
+  place-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Mulish', sans-serif;
+  background-color: $main_bg;
+  @include displayCenter();
+}
+
+.cards_container {
+  @include displayCenter();
+
+  .feature_title {
+    @include displayCenter();
+
+    h1 {
+      font-size: 30px;
+      margin: 15px 0;
+    }
+
+    p {
+      font-size: 15px;
+      font-weight: 300;
+    }
+  }
+
+  .cards_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+
+    .card {
+      width: 250px;
+      height: 310px;
+      background-color: $primary_bg;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: $box_shadow_one;
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: $box_shadow_two;
+      }
+
+      .card_icon {
+        width: 80px;
+        height: 80px;
+        @include displayCenter();
+        margin-bottom: 20px;
+
+        i {
+          font-size: 2rem;
+        }
+      }
+
+      .blue {
+        background-color: $icon_bg_one;
+        border-radius: $icon_one_border_radius;
+
+        i {
+          color: $icon_one;
+        }
+      }
+
+      .violet {
+        background-color: $icon_bg_two;
+        border-radius: $icon_two_border_radius;
+
+        i {
+          color: $icon_two;
+        }
+      }
+
+      .red {
+        background-color: $icon_bg_three;
+        border-radius: $icon_three_border_radius;
+
+        i {
+          color: $icon_three;
+        }
+      }
+
+      .green {
+        background-color: $icon_bg_four;
+        border-radius: $icon_four_border_radius;
+
+        i {
+          color: $icon_four;
+        }
+      }
+
+      .card_details {
+        @include displayCenter();
+        text-align: center;
+
+        h4 {
+          margin: 15px 0;
+        }
+
+        p {
+          font-size: 13px;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+
+  .btn {
+    margin: 40px 0;
+    text-decoration: none;
+    padding: 1em 4em;
+    background-color: $secondary_bg;
+    color: #ffffff;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: $box_shadow_one;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $hover_bg;
+      box-shadow: $box_shadow_two;
+    }
+  }
+}

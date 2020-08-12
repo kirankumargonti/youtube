@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Mulish:wght@300&display=swap');
+$cinzel: 'Cinzel',
+serif;
+$mulish: 'Mulish',
+sans-serif;
+
+@mixin displayCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $mulish;
+  color: #ffffff;
+}
+
+p {
+  font-size: 18px;
+  margin: 15px;
+  font-weight: 300;
+}
+
+.container {
+  background: url("https://images.pexels.com/photos/37728/pexels-photo-37728.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260") no-repeat center center/cover;
+  height: 100vh;
+  @include displayCenter();
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000057;
+  }
+
+  .container_inside {
+    text-align: center;
+    position: relative;
+
+    .logo {
+      @include displayCenter();
+
+      img {
+        width: 10%;
+        height: 10%;
+        transform: rotate(20deg);
+      }
+    }
+
+    h1,
+    h2 {
+      text-transform: uppercase;
+      font-family: $cinzel;
+    }
+
+    h1 {
+      font-weight: 400;
+      font-size: 150px;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 100px;
+      margin-top: -50px;
+    }
+
+    form {
+
+      .btn,
+      input {
+        padding: 1em 2em;
+        border: 2px solid #ffffff;
+        font-family: $mulish;
+        letter-spacing: 1px;
+      }
+
+      input {
+        background: transparent;
+        width: 40%;
+
+        &::placeholder {
+          font-size: 1.5em;
+          color: #ffffff;
+          opacity: 1;
+        }
+      }
+
+      .btn {
+        outline: none;
+        display: inline-block;
+        cursor: pointer;
+        background-color: #ffffff;
+        margin-left: -5px;
+        text-transform: uppercase;
+      }
+    }
+
+    .social_connects {
+      a {
+        text-decoration: none;
+
+        i {
+          color: #ffffff;
+          font-size: 1.5rem;
+          margin: 5px 10px;
+        }
+      }
+    }
+  }
+}

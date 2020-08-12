@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SignUp From</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./css/main.css" type="text/css">
+</head>
+
+<body>
+  <div class="signup_container">
+    <div class="signup_left">
+      <h1>Already Signed up?</h1>
+      <p>
+        All users on MySpace will know that there are millions of people out
+        there. Every day besides so many people joining this community
+      </p>
+      <button type="submit" class="login_btn">log in</button>
+    </div>
+    <div class="signup_right">
+      <h1>Sign Up for an Account</h1>
+      <p>
+        Let’s get you all set up so you can start creating your <br />
+        first onboarding experience.
+      </p>
+      <form>
+        <div class="name_inputs">
+          <!-- first name -->
+          <div>
+            <label for="fname">First Name</label><br />
+            <input type="text" name="fname" placeholder="Your first name" class="fname" />
+          </div>
+
+          <!-- last name -->
+          <div>
+            <label for="lname">Last Name</label><br />
+            <input type="text" name="lname" placeholder="Your last name" class="lname" />
+          </div>
+        </div>
+
+        <!-- email -->
+        <div>
+          <label for="email">Email</label><br />
+          <input type="email" name="email" placeholder="Enter your email" />
+        </div>
+
+        <!-- password -->
+        <div>
+          <label for="password">Password</label><br />
+          <div class="password">
+            <input type="password" name="password" placeholder="Enter your password" />
+            <span>
+              <i class="far fa-eye-slash"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- checkbox -->
+        <div>
+          <input type="checkbox" class="checkbox" />
+          <span>
+            I accept KirankumarGonti's
+            <a href="#">Terms & Conditions</a>
+          </span>
+        </div>
+        <button type="submit" class="signup_btn">sign up</button>
+      </form>
+      <p class="or_else">Or Sign up using</p>
+      <div class="social_logins">
+        <button type="submit" class="google_login">
+          <i class="fab fa-google"></i>
+        </button>
+        <button type="submit" class="facebook_login">
+          <i class="fab fa-facebook-f"></i>
+        </button>
+        <button type="submit" class="linkedin_login">
+          <i class="fab fa-linkedin-in"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
