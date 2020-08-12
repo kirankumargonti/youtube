@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show & Hide Password || JavaScript</title>
+    <script
+      src="https://kit.fontawesome.com/361b32335c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+  </head>
+  <body>
+    <div class="password-field">
+      <input type="password" id="fakePassword" placeholder="Enter Password" />
+      <span><i id="toggler"class="far fa-eye"></i></span>
+    </div>
+
+    <script>
+      var password = document.getElementById('fakePassword');
+      var toggler = document.getElementById('toggler');
+
+      showHidePassword = () => {
+        if (password.type == 'password') {
+          password.setAttribute('type', 'text');
+          toggler.classList.add('fa-eye-slash');
+        } else {
+          toggler.classList.remove('fa-eye-slash');
+          password.setAttribute('type', 'password');
+        }
+      };
+
+      toggler.addEventListener('click', showHidePassword);
+    </script>
+  </body>
+</html>
