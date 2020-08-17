@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Side Navbar</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+  </head>
+  <body>
+    <div class="banner" id="banner">
+      <nav>
+        <div class="logo">
+          K
+        </div>
+        <i onclick="openNav()">&#9776;</i>
+      </nav>
+
+      <div class="content">
+        <h1>Welcome to Website</h1>
+      </div>
+
+      <div class="side-nav" id="side-nav">
+        <i onclick="closeNav()">&times;</i>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact us</a>
+        <a href="#">Sign up</a>
+        <a href="#">sign in</a>
+      </div>
+
+      <div id="overlay"></div>
+    </div>
+
+    <script>
+      const sideNav = document.getElementById('side-nav');
+
+      const overlay = document.getElementById('overlay');
+
+      const banner = document.getElementById('banner');
+
+      function openNav() {
+        sideNav.style.width = '250px';
+        overlay.style.display = 'block';
+        banner.style.marginLeft = '250px';
+      }
+
+      function closeNav() {
+        sideNav.style.width = '0';
+        overlay.style.display = 'none';
+        banner.style.marginLeft = '0';
+      }
+    </script>
+  </body>
+</html>
