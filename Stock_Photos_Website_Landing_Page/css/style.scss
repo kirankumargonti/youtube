@@ -1,0 +1,292 @@
+// Sass Variables
+$overlay_color: #2a073bbd;
+$main_bg: #f0f8ff;
+$primary-bg: #ffffff;
+$secondary_bg: #000000;
+$hover_color: #e49c00;
+$img-overlay-bg: #0000004d;
+$footer_bg: #2a073b;
+$box-shadow: 0px 2px 8px #00000080;
+
+@mixin displayCenter($value) {
+    display: flex;
+    align-items: center;
+    justify-content: $value;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial;
+    background-color: $main_bg;
+}
+
+i,
+img {
+    cursor: pointer;
+}
+
+i {
+    font-size: 1.5rem;
+    color: $primary-bg;
+
+    &:hover {
+        color: $hover_color !important;
+    }
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: $primary-bg;
+
+    &:hover {
+        color: $hover_color;
+    }
+}
+
+
+header {
+    background: url('https://images.pexels.com/photos/3601421/pexels-photo-3601421.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500') no-repeat center center / cover;
+    height: 80vh;
+    position: relative;
+    @include displayCenter(center);
+    color: $primary-bg;
+    flex-direction: column;
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $overlay_color;
+    }
+
+    nav {
+        position: absolute;
+        top: 10px;
+        width: 80%;
+        @include displayCenter(space-between);
+
+        .logo {
+            background-color: $primary-bg;
+            color: $secondary_bg;
+            @include displayCenter(center);
+            width: 50px;
+            height: 50px;
+            font-weight: bold;
+            border-radius: 50%;
+        }
+    }
+
+    #side-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: $overlay_color;
+        width: 0;
+        height: 100%;
+        z-index: 2;
+        padding-top: 60px;
+        overflow-x: hidden;
+        transition: 0.5s;
+
+        a {
+            display: block;
+            margin: 20px;
+            padding: 8px 8px 8px 32px;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        i {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+        }
+    }
+
+    .content {
+        position: relative;
+        text-align: center;
+        text-transform: capitalize;
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+    }
+
+    .search {
+        position: relative;
+        margin: 20px 0 10px 0;
+        box-shadow: $box-shadow;
+
+        input {
+            width: 35rem;
+            height: 3.5rem;
+            border: 1px solid $primary-bg;
+            border-radius: 5px;
+            font-size: 18px;
+            padding: 1em;
+        }
+
+        i {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translate(-50%, -50%);
+            color: $secondary_bg;
+        }
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+
+    .column {
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+
+        .img-wrapper {
+            position: relative;
+
+            &:hover {
+                .overlay {
+                    opacity: 1;
+                }
+
+                img {
+                    opacity: 0.8;
+                    transition: all 0.5s ease;
+
+                }
+            }
+
+            img {
+                width: 100%;
+                margin-top: 8px;
+                vertical-align: middle;
+            }
+
+            .overlay {
+                position: absolute;
+                bottom: 0;
+                background-color: $img-overlay-bg;
+                color: $primary-bg;
+                width: 100%;
+                @include displayCenter(space-around);
+                padding: 10px 5px;
+                opacity: 0;
+                transition: all 0.5s ease;
+
+                .user {
+                    @include displayCenter(space-around);
+
+                    h5 {
+                        margin: 0 10px;
+                    }
+                }
+
+                .icon {
+                    background-color: $primary-bg;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 5px;
+                    @include displayCenter(center);
+                    cursor: pointer;
+
+                    &:hover {
+                        i {
+                            color: $hover_color;
+                        }
+                    }
+
+                    i {
+                        color: $secondary_bg;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: $footer_bg;
+    color: $primary-bg;
+    @include displayCenter(center);
+    flex-direction: column;
+    padding: 30px 0;
+    margin-top: 30px;
+    position: relative;
+
+    .social-icons {
+        i {
+            margin: 50px 20px;
+        }
+    }
+
+    .arrow-up {
+        position: absolute;
+        top: 0;
+        right: 5%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        background-color: $primary-bg;
+        border-radius: 5px;
+        @include displayCenter(center);
+        box-shadow: $box-shadow;
+
+        i {
+            color: $secondary_bg;
+        }
+    }
+
+}
+/* @media screen and (max-width: 1200px) {
+    .row {
+        .column {
+            flex: 33%;
+            max-width: 33%;
+            margin: auto;
+        }
+    }
+} */
+
+@media screen and (max-width: 800px) {
+    .row {
+        .column {
+            flex: 50%;
+            max-width: 50%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    input {
+        max-width: 20rem;
+    }
+
+    .row {
+        .column {
+            flex: 100%;
+            max-width: 100%;
+        }
+    }
+}
