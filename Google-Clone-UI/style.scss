@@ -1,0 +1,215 @@
+@mixin displayCenter($value) {
+  display: flex;
+  align-items: center;
+  justify-content: $value;
+}
+
+// Sass VAriables
+$color: rgba(0, 0, 0, 0.871);
+$primary_color: #f1f1f1;
+$btn_color: rgba(0, 0, 0, 0.54);
+$btn-border-color: #c6c6c6;
+$search-border-color: #e6e5e5;
+$languages_color: #1a2bca;
+
+$box-shadow-one: 0px 1px 1px rgba(0, 0, 0, 0.1);
+$box-shadow-two: 0px 1px 4px 3px rgba(0, 0, 0, 0.1);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: $btn_color;
+  outline: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+i {
+  font-size: 1.3rem;
+}
+
+i,
+img,
+button {
+  cursor: pointer;
+}
+
+.google {
+  height: 100vh;
+  @include displayCenter(center);
+  position: relative;
+
+  .google-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    @include displayCenter(flex-end);
+    padding: 20px;
+
+    a {
+      color: $color;
+      font-size: 13px;
+      margin-right: 15px;
+      line-height: 24px;
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+
+    i,
+    img {
+      vertical-align: middle;
+    }
+  }
+
+  .google-body {
+    @include displayCenter(center);
+    flex-direction: column;
+    margin-top: -100px;
+
+    img {
+      width: 272px;
+      height: 92px;
+      display: block;
+    }
+
+    form {
+      width: 584px;
+      margin: 25px;
+      @include displayCenter(center);
+      flex-direction: column;
+
+      .search {
+        width: 100%;
+        position: relative;
+
+        input {
+          width: 100%;
+          padding: 0.8em 3em;
+          border-radius: 30px;
+          outline: none;
+          border: 1px solid $search-border-color;
+          transition: all 0.3s ease;
+          background-color: transparent;
+          color: $color;
+          font-size: 16px;
+          word-wrap: break-word;
+
+          &:hover {
+            box-shadow: $box-shadow-two;
+            border-color: transparent;
+          }
+        }
+
+        .fa-search,
+        .fa-microphone {
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          color: $btn_color;
+        }
+
+        .fa-search {
+          left: 25px;
+        }
+
+        .fa-microphone {
+          right: 25px;
+        }
+      }
+    }
+
+    .buttons {
+      padding-top: 18px;
+
+      button {
+        border-radius: 4px;
+        border: 1px solid transparent;
+        background-color: $primary_color;
+        color: $btn_color;
+        padding: 0 16px;
+        margin: 11px 4px;
+        min-width: 54px;
+        height: 36px;
+        outline: none;
+        user-select: none;
+        text-align: center;
+        text-transform: capitalize;
+        font-size: 14px;
+        line-height: 24px;
+        display: inline-block;
+
+        &:hover {
+          color: $color;
+          box-shadow: $box-shadow-one;
+          opacity: 0.85;
+          border-color: $btn-border-color;
+        }
+      }
+    }
+
+    .languages {
+      @include displayCenter(center);
+      flex-wrap: wrap;
+      text-align: center;
+      font-size: small;
+      margin: -10px 0 20px 0;
+      line-height: 28px;
+
+      .language-type {
+        a {
+          color: $languages_color;
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+
+  .google-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: $primary_color;
+    text-transform: capitalize;
+
+    a {
+      font-size: 14px;
+      line-height: 40px;
+      padding-left: 27px;
+    }
+
+    hr {
+      color: #f1f1f13a;
+    }
+
+    .footer-down {
+      @include displayCenter(space-between);
+      flex-wrap: wrap;
+
+      .footer-down-right {
+        padding-right: 27px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .google-body {
+    form {
+      max-width: 350px;
+    }
+  }
+}
